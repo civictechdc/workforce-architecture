@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Workforce Structure Schema",
+  "description": "Defines taxonomy and categories - what types of things exist",
+  "domains": [
+    "Partnerships & Outreach",
+    "Member & Volunteer Coordination",
+    "Project Incubation & Management",
+    "Advisory Services",
+    "Operations & Administration",
+    "Events & Community Engagement",
+    "Infrastructure & SysAdmin",
+    "Marketing & Communications",
+    "Financial Management & Compliance",
+    "Fundraising & Development",
+    "Board & Governance"
+  ],
+  "workProperties": {
+    "name": "string - what is the work called",
+    "domain": "string - which domain",
+    "who": "array - people doing this",
+    "frequency": "daily | weekly | biweekly | monthly | quarterly | as-needed | continuous",
+    "hours": "string - time estimate (e.g., '2-3 hrs/week')",
+    "critical": "boolean - business-critical?",
+    "automatable": "boolean - AI/automation candidate?",
+    "engagementType": "ongoing | term-based | casual | fellowship",
+    "tools": "array - platforms/services used (e.g., Slack, Lu.ma, AWS, GitHub)",
+    "knowledgeManagement": "boolean - involves documentation/standardization?",
+    "dependencies": "array - what other work this depends on"
+  },
+  "engagementTypeDefinitions": {
+    "ongoing": "Permanent operational role, no fixed end date (core team work)",
+    "term-based": "Fixed-duration commitment with clear start/end (quarterly project, specific deliverable)",
+    "fellowship": "Structured term-based role with defined deliverables, leadership expectations, and job board posting (subset of term-based)",
+    "casual": "Drop-in contribution, task-based, no commitment required"
+  },
+  "personTypes": [
+    "board",
+    "core",
+    "volunteer",
+    "partner",
+    "advisor"
+  ],
+  "personTypeDefinitions": {
+    "board": "Governance role, strategic oversight - may also do operational work",
+    "core": "Ongoing operational leadership, multi-domain responsibility, decision authority",
+    "volunteer": "Project-based contributor, time-boxed engagement, specific domain",
+    "partner": "External nonprofit POC, domain expert, project beneficiary",
+    "advisor": "External expert, consultative guidance, office hours model"
+  },
+  "gapTypes": [
+    "unassigned",
+    "single-point-of-failure",
+    "overload",
+    "critical-need"
+  ],
+  "gapTypeDefinitions": {
+    "unassigned": "Critical work with no current owner",
+    "single-point-of-failure": "Critical work with only one person (no backup)",
+    "overload": "Person assigned to multiple critical roles or exceeding hour limits",
+    "critical-need": "Urgent gap requiring immediate attention or blocking other work"
+  },
+  "automationCriteria": {
+    "impact": ["high", "medium", "low"],
+    "effort": ["high", "medium", "low"]
+  },
+  "frequencyOptions": [
+    "daily",
+    "weekly",
+    "biweekly",
+    "monthly",
+    "quarterly",
+    "as-needed",
+    "continuous"
+  ],
+  "projectProperties": {
+    "phase": "discovery | incubation | transition | adoption | archived",
+    "pathway": "NP-Open | NP-Date | VOL-Idea | VOL-Partnered",
+    "leadershipMode": "volunteer-led | nonprofit-led"
+  },
+  "projectPropertyDefinitions": {
+    "phase": "Current lifecycle stage - discovery (weeks 1-2), incubation (3-10), transition (11-12)",
+    "pathway": "Entry model - NP-Open (nonprofit needs volunteers), NP-Date (deadline-driven), VOL-Idea (volunteer needs sponsor), VOL-Partnered (volunteer manages relationship)",
+    "leadershipMode": "Decision authority - volunteer-led (volunteer drives) or nonprofit-led (partner drives)"
+  }
+}
